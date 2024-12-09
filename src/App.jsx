@@ -1,13 +1,45 @@
-import './App.css'
+import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Link,
+} from "react-router-dom";
+import RootLayout from './Layout/RootLayout';
+import HomePage from './Pages/HomePage';
+import BuyCredit from './Pages/BuyCredit';
+import Result from './Pages/Result';
+import Error from './Components/Error';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout/>,
+      children : [
+        {
+          path : "/",
+          element : <HomePage/>
+        },
+        {
+          path : 'buy',
+          element : <BuyCredit/>
+        },
+        {
+          path : 'result',
+          element : <Result/>
+        }
+      ]
+    },
+    {
+      path: "*",
+      element: <Error/>,
+    },
+  ]);
  
 
   return (
     <>
-    <h1 className="text-3xl font-bold text-blue-700 underline">
-      Hello world!
-    </h1>
+    <RouterProvider router={router} />
     </>
   )
 }
