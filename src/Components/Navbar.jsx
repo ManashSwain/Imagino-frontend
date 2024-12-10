@@ -47,9 +47,9 @@ const Navbar = () => {
           </button>
         </div>
       )}
-    </div>  : <div className="md:ml-auto flex flex-wrap items-center justify-center align-middle">
+    </div>  : <div className="md:ml-auto  flex flex-wrap items-center justify-center align-middle">
       <p className="mr-9 hover:text-gray-900 cursor-pointer" onClick={()=>{navigate('/buy')}}>Pricing</p>
-    <button className=" items-center text-white bg-blue-700 border-0 py-1  px-3 focus:outline-none hover:bg-blue-800 rounded text-base mt-4 md:mt-0 sm:mt-0">Login</button>
+    <button className="pricing-login items-center text-white bg-blue-700 border-0 py-1  px-3 focus:outline-none hover:bg-blue-800 rounded text-base mt-4 sm:mt-0 md:mt-0   ">Login</button>
     
     </div>}
   </div>
