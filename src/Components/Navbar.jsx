@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { Appcontext } from "../Context/ContextProvider";
 
 const Navbar = () => {
 
-    // eslint-disable-next-line no-unused-vars
-    const [user,setUser] = useState(false);
+// eslint-disable-next-line no-unused-vars
+  const {user, setUser} = useContext(Appcontext);
     const navigate = useNavigate();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
