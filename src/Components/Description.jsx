@@ -1,7 +1,7 @@
 const Description = () => {
   return (
     <>
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 bg-blue-100 body-font">
   <div className="container px-5 py-24 mx-auto flex flex-wrap">
   <div className="text-center flex flex-col w-full justify-center align-middle mb-16">
   <h1 className="text-center mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">Create AI Images</h1>
