@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
 
     // eslint-disable-next-line no-unused-vars
-    const [user,setUser] = useState(true);
+    const [user,setUser] = useState(false);
     const navigate = useNavigate();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
