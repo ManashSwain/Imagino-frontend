@@ -52,7 +52,7 @@ const Pricing = () => {
         <span className="text-5xl font-semibold tracking-tight text-white">₹100</span>
         <span className="text-base text-gray-400">/100 credits</span>
       </p>
-      <p className="mt-6 text-base/7 text-gray-300">The perfect plan if you're starting with your team.</p>
+      <p className="mt-6 text-base/7 text-gray-300">The perfect plan if you are starting with your team.</p>
       <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-300 sm:mt-10">
         <li className="flex gap-x-3">
           <svg className="h-6 w-5 flex-none text-indigo-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
