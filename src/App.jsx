@@ -8,6 +8,7 @@ import HomePage from './Pages/HomePage';
 import BuyCredit from './Pages/BuyCredit';
 import Result from './Pages/Result';
 import Error from './Components/Error';
+import Login from './Components/Login';
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <>
+    <Login/>
     <RouterProvider router={router} />
     </>
   )
