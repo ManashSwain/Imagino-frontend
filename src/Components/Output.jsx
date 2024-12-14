@@ -5,9 +5,11 @@ const Output = () => {
   // eslint-disable-next-line no-unused-vars
   const [image , setImage] = useState("spaceship.jpg");
   const [isImageLoaded , setImageLoaded] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [loading , setLoading] = useState(true);
   const [input , setInput] = useState('');
   
+  // eslint-disable-next-line no-unused-vars
   const onSubmitHandler = async (e)=>{
 
   }
