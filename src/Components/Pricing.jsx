@@ -1,4 +1,8 @@
+import { useContext } from "react"
+import { Appcontext } from "../Context/ContextProvider"
+
 const Pricing = () => {
+  const {user} = useContext(Appcontext)
   return (
    <>
    <div className="pricing relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -44,7 +48,7 @@ const Pricing = () => {
           24-hour support response time
         </li>
       </ul>
-      <a href="#" aria-describedby="tier-hobby" className="mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10">Get started today</a>
+      <a href="#" aria-describedby="tier-hobby" className="mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10">{user ? "Purchase" : "Get started today"  }</a>
     </div>
     <div className="relative rounded-3xl bg-gray-900 p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
       <h3 id="tier-enterprise" className="text-base/7 font-semibold text-indigo-400">Advanced</h3>
@@ -86,7 +90,7 @@ const Pricing = () => {
         </li>
        
       </ul>
-      <a href="#" aria-describedby="tier-enterprise" className="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
+      <a href="#" aria-describedby="tier-enterprise" className="mt-8 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">{user ? "Purchase" : "Get started today"  }</a>
     </div>
   </div>
 </div>
