@@ -2,7 +2,7 @@ const Login = () => {
   return (
     <>
       {/* Full-screen blur background */}
-      <div className="fixed inset-0 bg-gray-200/30 backdrop-blur-lg z-10"></div>
+      <div className="fixed inset-0 bg-gray-400/30 backdrop-blur-lg z-10"></div>
 
       {/* Centered Login Form */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full rounded-lg bg-white p-6 z-10 shadow-lg">
