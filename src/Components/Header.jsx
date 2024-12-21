@@ -1,6 +1,19 @@
 import { motion } from "motion/react"
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
+import { Appcontext } from "../Context/ContextProvider";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const {user , setShowlogin} = useContext(Appcontext)
+  const generateHandler = ()=>{
+    if(user){
+      navigate('/result')
+    }
+    else{
+      setShowlogin(true)
+    }
+  }
   return (
     <>
     <motion.div className="bg-blue-100 header"
@@ -38,7 +51,7 @@ const Header = () => {
         transition={{duration : 1.5}}
         whileInView={{opacity : 1 , y :0}}
         viewport={{once : true}}>
-          <button  className=" flex gap-2 cursor-pointer justify-center items-center rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">Generate Images
+          <button onClick={generateHandler}  className=" flex gap-2 cursor-pointer justify-center items-center rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">Generate Images
           <img className="w-4" src="star.png" alt="star" />
           </button>
         </motion.div>
