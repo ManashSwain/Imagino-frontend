@@ -5,7 +5,7 @@ import { Appcontext } from "../Context/ContextProvider";
 const Navbar = () => {
 
 // eslint-disable-next-line no-unused-vars
-  const {user, setUser} = useContext(Appcontext);
+  const {user, setUser , showLogin , setShowlogin} = useContext(Appcontext);
     const navigate = useNavigate();
 
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,7 +50,7 @@ const Navbar = () => {
       )}
     </div>  : <div className="md:ml-auto  flex flex-wrap items-center justify-center align-middle">
       <p className="mr-9 hover:text-gray-900 cursor-pointer" onClick={()=>{navigate('/buy')}}>Pricing</p>
-    <button className="pricing-login items-center text-white bg-blue-700 border-0 py-1  px-3 focus:outline-none hover:bg-blue-800 rounded text-base mt-4 sm:mt-0 md:mt-0   ">Login</button>
+    <button className="pricing-login items-center text-white bg-blue-700 border-0 py-1  px-3 focus:outline-none hover:bg-blue-800 rounded text-base mt-4 sm:mt-0 md:mt-0 " onClick={()=>{setShowlogin(true)}}>Login</button>
     
     </div>}
   </div>
