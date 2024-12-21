@@ -31,15 +31,17 @@ const Header = () => {
         animate={{opacity : 1 ,x : 0}}>Turn text to <span className="text-blue-700">image</span>, in seconds</motion.h1>
         <motion.p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8"
         initial={{opacity : 0 , y : -20}}
-        transition={{delay:0.5 , duration :1}}
+        transition={{delay:0.8 , duration :1}}
         animate={{opacity : 1 ,x : 0}}>Unleash your creativity with AI. Turn your imagination into visual art in seconds. Just type , and watch the magic happen.</motion.p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
+        <motion.div className="mt-10 flex items-center justify-center gap-x-6"
+        initial={{opacity:0.1 , y:100}}
+        transition={{duration : 1.5}}
+        whileInView={{opacity : 1 , y :0}}
+        viewport={{once : true}}>
           <button  className=" flex gap-2 cursor-pointer justify-center items-center rounded-md bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">Generate Images
           <img className="w-4" src="star.png" alt="star" />
           </button>
-          
-          
-        </div>
+        </motion.div>
       </div>
     </div>
     <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
