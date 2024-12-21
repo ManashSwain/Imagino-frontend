@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react" ;
 
 const Output = () => {
 
@@ -16,7 +17,12 @@ const Output = () => {
   return (  
     <>
       <form onSubmit={onSubmitHandler} className="flex flex-col items-center justify-center mt-24 ">
-        <div className="container relative flex flex-col items-center justify-center p-5">
+        <motion.div
+         className="container relative flex flex-col items-center justify-center p-5"
+         initial={{opacity : 0.3 , y: 50}}
+         transition={{duration :0.8}}
+         whileInView={{opacity: 1 , y:0}}
+         viewport={{once:true}}>
           <div className="imageContainer relative max-w-sm w-full flex items-center justify-center overflow-hidden ">
             <img
               className="w-full rounded"
@@ -26,9 +32,15 @@ const Output = () => {
             <span className={`absolute bottom-0 left-0 h-1 bg-blue-600 ${loading ? `w-full transition-all duration-[10s]` : `w-0`}`}></span>
           </div>
          {loading &&  <p className="mt-2 text-gray-600">Loading...</p>}
-        </div>
+        </motion.div>
 
-       {!isImageLoaded &&  <div className="relative flex-grow w-full flex gap-2 p-2 justify-center items-center">
+       {!isImageLoaded &&  <motion.div
+        initial={{opacity : 0.3 , y: 100}}
+        transition={{duration :0.8}}
+        whileInView={{opacity: 1 , y:0}}
+        viewport={{once:true}}
+       
+       className="relative flex-grow w-full flex gap-2 p-2 justify-center items-center">
           <input
             type="text"
             id="description"
@@ -40,7 +52,7 @@ const Output = () => {
           <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Generate Image
           </button>
-        </div>}
+        </motion.div>}
         { isImageLoaded && <div className="btn-container flex gap-2 p-2 ">
         <button onClick={()=>{setImageLoaded(false)}} className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-md">
             Generate Another
