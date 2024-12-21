@@ -1,7 +1,20 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Appcontext } from "../Context/ContextProvider";
+
 
 const Login = () => {
   const [loginState , setLoginState] = useState(false);
+  const { showLogin , setShowlogin } = useContext(Appcontext);
+
+  // use effect hook to avoid scrolling 
+
+  useEffect(()=>{
+   document.body.style.overflow = "hidden";
+   return ()=>{
+    document.body.style.overflow = "unset";
+   }
+  },[])
+ 
   return (
     <>
       {/* Full-screen blur background */}
@@ -9,7 +22,7 @@ const Login = () => {
 
       {/* Centered Login Form */}
       <div className="absolute my-14 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-md w-full rounded-lg bg-white p-6 z-10 shadow-lg">
-      <img className="w-8 h-8 relative left-[23rem] " src="remove.png" alt="cross" />
+      <img className="w-8 h-8 relative left-[23rem] cursor-pointer " src="remove.png" alt="cross" onClick={()=>{setShowlogin(false)}} />
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto"

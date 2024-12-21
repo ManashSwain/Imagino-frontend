@@ -10,7 +10,12 @@ import Result from './Pages/Result';
 import Error from './Components/Error';
 import Login from './Components/Login';
 
+import { useContext } from 'react';
+import { Appcontext } from './Context/ContextProvider';
+
+
 function App() {
+  const {showLogin , setShowlogin} = useContext(Appcontext);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -39,7 +44,7 @@ function App() {
 
   return (
     <>
-    <Login/>
+    {showLogin && <Login/>}
     <RouterProvider router={router} />
     </>
   )
